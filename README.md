@@ -1,6 +1,6 @@
 # Sobelow Findings Guide
 
-When Sobelow reports a finding for an Elixir application, there are three key questions the developer should ask:
+When [Sobelow](https://github.com/nccgroup/sobelow) reports a finding for an Elixir application, there are three key questions the developer should ask:
 
 1. Is this finding a true positive or false positive?
 
@@ -16,6 +16,16 @@ This document provides guidelines for evaluating each possible Sobelow finding. 
 2. `DOS.StringToAtom`, Severity: Medium
 
 Both these findings are true positives. The `Misc.BinToTerm` finding means the application may be vulnerable to remote code execution, where an attacker could gain the equivalent of production SSH access to the web server. From this foothold, the attacker can issue financial transactions, modify customer records, and further compromise the bank's network. Contrast this finding to the `DOS.StringToAtom` finding. An attacker can use this vulnerability to crash the banking server. This is not ideal, and is a security issue, however the attacker does not get read/write/execute access to the server, so the severity is lower.
+
+---
+
+<a href="https://paraxial.io/"><img src="./images/paraxial_logo.png" width="400"></a>
+
+This guide is sponsored by [Paraxial.io](https://paraxial.io/), an application security platform for Elixir and Phoenix. Paraxial.io Application Secure manages Sobelow scanning to ensure automated compliance. Enterprise customers can request expert help in fixing vulnerabilities reported by Sobelow. 
+
+This document is not considered part of the [Sobelow](https://github.com/nccgroup/sobelow) official documentation. 
+
+---
 
 ## Severity Ratings
 
