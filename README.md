@@ -664,6 +664,8 @@ When `upload` is set by the user, it is not safe to pass the `filename` variable
 
 and is safe to pass as a variable.
 
+If you must combine user input to get a path, make sure it's sanitized by [`Path.safe_relative/1`](https://hexdocs.pm/elixir/Path.html#safe_relative/1) before passing to `File` functions.
+
 
 ## UID 20, Traversal.SendDownload: Directory Traversal in `send_download`
 
